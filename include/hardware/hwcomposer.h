@@ -806,7 +806,15 @@ typedef struct hwc_composer_device_1 {
      *   should be null for previous versions.
      */
     int (*setCursorPositionAsync)(struct hwc_composer_device_1 *dev, int disp, int x_pos, int y_pos);
+    /*
+     * Enable backlight control after suspend.
+     * True for enable
+     * False for disable
+     * Return 0 for success
+     */
 
+    int (*setBacklightOverride)(struct hwc_composer_device_1* dev, int disp,
+             bool value);
     /*
      * Reserved for future use. Must be NULL.
      */

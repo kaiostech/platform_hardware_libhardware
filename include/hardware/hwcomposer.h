@@ -816,6 +816,14 @@ typedef struct hwc_composer_device_1 {
     int (*setBacklightOverride)(struct hwc_composer_device_1* dev, int disp,
              bool value);
     /*
+     * Enable Regulator control after suspend.
+     * True for enable
+     * False for disable
+     * Return 0 for success
+     */
+    int (*setRegulatorOverride)(struct hwc_composer_device_1* dev, int disp,
+             bool value);
+    /*
      * Reserved for future use. Must be NULL.
      */
     void* reserved_proc[1];
